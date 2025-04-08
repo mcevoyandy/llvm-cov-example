@@ -1,9 +1,8 @@
 # MWE for using LLVM-COV with Gtests
 
-A minimal example showing how I think llvm-cov should be used with gtest to get a code coverage report...
+A minimal example showing how I think llvm-cov should be used with gtest to get a code coverage report.
 
-However, the report only shows coverage for the last test fixure run.
-
+Running the following will produce the report `build/html/index.html`. View this in your browser.
 
 ## BUILD
 
