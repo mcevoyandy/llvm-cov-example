@@ -5,18 +5,15 @@
 
 echo -e "Generating HTML coverage reports..."
 
-# Set variable to store the path to the build directory and current directoryj
+# Set variable to store the path to the build directory and current directory
 echo -e "BUILD_DIR=$1"
 BUILD_DIR="$1"
 CURRENT_DIR=$(pwd)
 
-# Set location where raw coverage data will be stored
-export LLVM_PROFILE_FILE="$BUILD_DIR/default.profraw"
-echo -e "LLVM_PROFILE_FILE=$LLVM_PROFILE_FILE"
-
 # Run the unit tests to include in the report
 cd $BUILD_DIR
-# Set location where raw coverage data will be stored
+
+# Set location where raw coverage data will be stored. NOTE: This should be set for each executable being run.
 export LLVM_PROFILE_FILE="$BUILD_DIR/cool_stuff_unit_tests.profraw"
 echo -e "LLVM_PROFILE_FILE=$LLVM_PROFILE_FILE"
 ./cool_stuff_unit_tests
@@ -26,7 +23,6 @@ echo -e "LLVM_PROFILE_FILE=$LLVM_PROFILE_FILE"
 ./other_stuff_unit_tests
 
 # Generate the HTML coverage reports
-
 cd $BUILD_DIR
 
 # To include multiple results from multiple tests, we need to merge the raw data files
