@@ -9,6 +9,6 @@ However, the report only shows coverage for the last test fixure run.
 
 ```bash
 cmake -B build -DBUILD_UNIT_TESTS=ON -DCOVERAGE=ON
-make --build build -j 16
+cmake --build build -j 16
 bash scripts/make_coverage_reports.sh /home/andy/git/llvm-cov-example/build
 ```
